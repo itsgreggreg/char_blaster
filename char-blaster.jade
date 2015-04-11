@@ -5,6 +5,15 @@ body
   +char_blaster
 
 template(name="char_blaster")
-  input#chars(value=chars)
-  h1 #{current_char}
-  input#attempt
+  #game(class = running)
+    input#chars(value=chars)
+    h1 #{current_char}
+    button#start Start
+    input#attempt
+    hr
+    div
+      | Score:
+      span#score #{score}
+      br
+      | Time:
+      span#time #{time}

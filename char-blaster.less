@@ -10,3 +10,20 @@ input.wrong{
   border: 1px solid red;
   background-color: #FF6666;
 }
+
+#game{
+  #start{
+    display: block;
+  }
+  #attempt{
+    display: none;
+  }
+  &.running{
+    #start{
+      display: none;
+    }
+    #attempt{
+      display: block;
+    }
+  }
+}

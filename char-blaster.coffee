@@ -1,9 +1,7 @@
 # Runs on both server and client
 Scores = new Mongo.Collection("scores")
 
-
 if Meteor.isClient
-  window.scores = Scores
   chars_default = '<>:;"\'(){}[]=+-'
   time_default  = 30
   keypressed    = false

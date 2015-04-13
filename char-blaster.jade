@@ -3,17 +3,43 @@ head
 
 body
   +char_blaster
+  +score_board
 
 template(name="char_blaster")
-  #game(class = running)
-    input#chars(value=chars)
-    h1 #{current_char}
-    button#start Start
-    input#attempt
-    hr
-    div
-      | Score:
-      span#score #{score}
+  #game($dyn = running)
+    .instructions
+      | Type the character
+    .playfield
+      .left
+        #current_char #{current_char}
+      .right
+        input#attempt
+      button#start Start
+    .hud
+      span#score Score #{score}
       br
       | Time:
       span#time #{time}
+    .options
+      If you change these your score will not be saved:
+      .row
+        .title Characters to practice:
+        input#chars(value=chars)
+      .row
+        .title Start Time
+        input#start_time(value=start_time)
+
+template(name="score_board")
+  #score_board
+    h2 Recent Scores
+    table
+      thead
+        tr
+          td Name
+          td Score
+      tbody
+        each scores
+          tr
+            td #{player_name}
+            td #{score}
+

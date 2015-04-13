@@ -4,26 +4,108 @@ body, html, #cover{
   height: 100%;
   margin: 0;
   padding: 0;
+  text-align: center;
+  // background-color: #7975FF;
+  background-image: url(http://subtlepatterns.com/patterns/symphony.png);
+  font-family: sans-serif;
+}
+*{ box-sizing: border-box; }
+h1,h2{
+  margin: 0; padding: 0;
 }
 
 input.wrong{
-  border: 1px solid red;
-  background-color: #FF6666;
+  border: 4px solid red !important;
+  background-color: #FF6666 !important;
 }
 
 #game{
-  #start{
-    display: block;
+  padding: 20px;
+  width: 500px;
+  margin: 100px auto;
+  background-color: #00E7FF;
+  box-shadow: 0 1px 2px rgba(0,0,0,.5);
+  border-radius: 10px;
+  .playfield{
+    position: relative;
+    height: 160px;
+    .left, .right{
+      height: 100%;
+      width: 50%;
+      padding-top: 40px;
+    }
+    .left{
+      float: left;
+    }
+    .right{
+      float: right;
+    }
+  }
+  #current_char{
+    display: none;
+    font-size: 5em;
   }
   #attempt{
     display: none;
+    background-color: #eee;
+    text-align: center;
+    padding: 5px;
+    font-size: 2em;
+    color: #333;
+    height: 60px;
+    width: 60px;
+    margin-top: 10px;
+    border: 4px solid #00e3e3;
+    box-shadow: 0 0 2px inset;
+  }
+  #start{
+    margin-top: 20px;
+    width: 70px;
+    height: 40px;
+    font-size: 20px;
+    position: absolute;
+    left: 50%;
+    margin-left: -35px;
+    top: 30%;
   }
   &.running{
     #start{
       display: none;
     }
     #attempt{
-      display: block;
+      display: inline;
+    }
+  }
+  .options{
+    padding-top: 30px;
+    text-align: left;
+    width: 90%;
+    margin: auto;
+    .title{
+      text-align: right;
+      display: inline-block;
+      width: 49%;
+    }
+    input{
+      width: 49%;
+      &#start_time{
+        width: 3em;
+      }
+    }
+  }
+}
+
+#score_board{
+  width: 500px;
+  margin: 100px auto;
+  h2{
+    margin-bottom: 10px;
+  }
+  table{
+    display: inline-block;
+    thead tr td{
+      font-weight: bold;
+      padding-bottom: 5px
     }
   }
 }

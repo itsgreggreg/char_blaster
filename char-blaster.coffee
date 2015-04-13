@@ -1,6 +1,7 @@
-# Runs on both server and client
+# This runs on both server and client
 Scores = new Mongo.Collection("scores")
 
+# Client Only
 if Meteor.isClient
   chars_default = '<>:;"\'(){}[]=+-'
   time_default  = 30
@@ -140,10 +141,9 @@ if Meteor.isClient
       player_name = prompt("What's your name?").trim()
     Session.set('player_name', player_name)
 
-
-
-if Meteor.isServer
-  Meteor.publish "all-scores", ->
-    Scores.find({})
+# Server Only
+# if Meteor.isServer
+  # Meteor.publish "all-scores", ->
+  #   Scores.find({})
   # Meteor.startup ->
     # // code to run on server at startup

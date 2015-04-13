@@ -101,6 +101,7 @@ if Meteor.isClient
       start_timer()
       pick_new_char()
 
+  # Countdown in whole seconds 'til callback
   countdown = (seconds, cb)->
     Session.set('current_char', seconds)
     window.setTimeout((->
@@ -108,6 +109,7 @@ if Meteor.isClient
      else countdown(seconds - 1, cb)
     ), 1000)
 
+  # Game timer
   start_timer = ->
     timeout = window.setTimeout((->
       Session.set('time', Session.get('time') - 1)

@@ -120,6 +120,7 @@ if Meteor.isClient
     if Session.get('time') <= 0
       # Save score
       if Session.get('running') and
+         Session.get('score') > 10 and
          Session.get('chars') is chars_default and
          Session.get('start_time') is time_default
         Scores.insert
